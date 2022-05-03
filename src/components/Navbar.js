@@ -9,9 +9,6 @@ export const Navbar = () => {
     };
   };
 
-  //   const styledNav = {
-  //     backgroundColor: "cyan",
-  //   };
   return (
     <div className="navbar">
       <NavLink to="/" style={styledNavActive}>
@@ -19,6 +16,9 @@ export const Navbar = () => {
       </NavLink>
       <NavLink to="/about" style={styledNavActive}>
         About
+      </NavLink>
+      <NavLink to="/products" style={styledNavActive}>
+        Products
       </NavLink>
     </div>
   );
