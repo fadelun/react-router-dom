@@ -1,21 +1,21 @@
 import React from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Outlet, useSearchParams } from "react-router-dom";
 
-function Users() {
+const Users = () => {
+  const [searchParams, setSearchPrams] = useSearchParams();
+  const showActiveUsers = searchParams.get("filter") === "active";
+
   return (
-    <div style={{ color: "blue" }}>
-      <Link to="1" style={{ marginLeft: "40px" }}>
-        user 1
-      </Link>
-      <Link to="2" style={{ marginLeft: "40px" }}>
-        user 2
-      </Link>
-      <Link to="3" style={{ marginLeft: "40px" }}>
-        user 3
-      </Link>
+    <div style={{ color: "green" }}>
+      <li>User 1</li>
+      <li>User 2</li>
+      <li>User 3</li>
       <Outlet />
+      <button onClick={() => setSearchPrams({ filter: "active" })}>Active Users</button>
+      <button onClick={() => setSearchPrams({})}>Reset Filter</button>
+      {showActiveUsers ? <h2>Showing active users</h2> : <h2>Showing All users</h2>}
     </div>
   );
-}
+};
 
 export default Users;
