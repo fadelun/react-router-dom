@@ -15,7 +15,8 @@ code {
   padding: 10px 30px;
 }
 
-a {
+nav a,
+.navbar a {
   color: red;
   margin: 0 4px;
   /* text-decoration: solid; */

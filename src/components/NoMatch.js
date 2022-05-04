@@ -1,7 +1,7 @@
 import React from "react";
 
 function NoMatch() {
-  return <div>Page not found</div>;
+  return <div style={{ color: "red", fontWeight: "bold" }}>Page not found</div>;
 }
 
 export default NoMatch;
